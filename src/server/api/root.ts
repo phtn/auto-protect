@@ -1,15 +1,15 @@
-import { postRouter } from "@/server/api/routers/post";
-import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
-import { payRouter } from "./routers/paymongo";
+import { createCallerFactory, router } from "@/server/api/trpc";
+import { docai_router } from "./routers/docai";
+// import { payRouter } from "./routers/paymongo";
 
 /**
  * This is the primary router for your server.
  *
  * All routers added in /api/routers should be manually added here.
  */
-export const appRouter = createTRPCRouter({
-  post: postRouter,
-  paymongo: payRouter,
+export const appRouter = router({
+  docai: docai_router,
+  // paymongo: payRouter,
 });
 
 // export type definition of API
